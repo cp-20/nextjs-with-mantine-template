@@ -1,15 +1,55 @@
-import { createGetInitialProps } from '@mantine/next';
-import Document, { Head, Html, Main, NextScript } from 'next/document';
-import { GoogleTagManagerBody } from '@/components/Injection/GoogleTagManager';
+import { ServerStyles, createStylesServer } from '@mantine/next';
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document';
+import {
+  GoogleTagManager,
+  GoogleTagManagerBody,
+} from '@/components/Injection/GoogleTagManager';
+import { generateCsp } from '@/lib/generateCsp';
 
-const getInitialProps = createGetInitialProps();
+const stylesServer = createStylesServer();
 
-export default class _Document extends Document {
-  static getInitialProps = getInitialProps;
+type DocumentProps = {
+  csp: string;
+  nonce: string;
+};
+
+export default class _Document extends Document<DocumentProps> {
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+
+    // CSP (Cross Site Policy) と nonce (number used once) を生成 (XSS対策)
+    const { csp, nonce } = generateCsp();
+
+    return {
+      ...initialProps,
+      csp,
+      nonce,
+      styles: [
+        initialProps.styles,
+        <ServerStyles
+          html={initialProps.html}
+          server={stylesServer}
+          key="styles"
+        />,
+      ],
+    };
+  }
+
   render() {
+    const { csp, nonce } = this.props;
     return (
-      <Html>
-        <Head>
+      <Html lang="ja">
+        <Head nonce={nonce}>
+          <meta httpEquiv="Content-Security-Policy" content={csp} />
+
+          <GoogleTagManager nonce={nonce} />
+
           <meta
             name="msapplication-square70x70logo"
             content="/favicons/site-tile-70x70.png"
@@ -245,16 +285,11 @@ export default class _Document extends Document {
             href="/favicons/icon-32x32.png"
           />
           <link rel="manifest" href="/favicons/manifest.json" />
-
-          <link
-            href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"
-            rel="stylesheet"
-          />
         </Head>
         <body>
           <GoogleTagManagerBody />
           <Main />
-          <NextScript />
+          <NextScript nonce={nonce} />
         </body>
       </Html>
     );

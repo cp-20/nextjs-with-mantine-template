@@ -2,13 +2,10 @@ import 'ress';
 import '@/styles/global.scss';
 import { MantineProvider } from '@mantine/core';
 import type { AppProps } from 'next/app';
-import { GoogleTagManager } from '@/components/Injection/GoogleTagManager';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <GoogleTagManager />
-
       <MantineProvider
         withGlobalStyles
         withNormalizeCSS
