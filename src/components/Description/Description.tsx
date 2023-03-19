@@ -1,8 +1,8 @@
 import Head from 'next/head';
 
 export const Description: React.FC = () => {
-  const title = 'のーろぐちゃっと';
-  const description = 'ログが残らないチャットでみんなと会話しよう！';
+  const title = '';
+  const description = '';
   const pageTitle = `${title} - ${description}`;
 
   return (
