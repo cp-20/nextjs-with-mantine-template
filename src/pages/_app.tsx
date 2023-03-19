@@ -1,5 +1,5 @@
 import 'ress';
-import '@/styles/global.scss';
+import '@/styles/global.css';
 import { MantineProvider } from '@mantine/core';
 import type { AppProps } from 'next/app';
 
