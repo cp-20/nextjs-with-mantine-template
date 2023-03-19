@@ -19,7 +19,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "jsxImportSource": "@emotion/react",
-    "incremental": true
+    "incremental": true,
+    "types": ["vitest/globals"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
