@@ -7,6 +7,8 @@
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "prettier.configPath": ".prettierrc.json",
+  "stylelint.configFile": ".stylelintrc.js",
+  "stylelint.packageManager": "pnpm",
   "files.insertFinalNewline": true,
-  "stylelint.validate": ["css", "scss"]
+  "stylelint.validate": ["css", "scss", "typescript", "typescriptreact"]
 }
