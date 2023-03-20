@@ -4,10 +4,11 @@ Next.js を Mantine UI と一緒に色々セットアップしてあるオレオ
 
 ## 技術スタック
 
-- Next.js v13
-- Mantine UI v6
-- Jotai
-- Emotion
+- [Next.js v13](https://nextjs.org/)
+- [Mantine UI v6](https://emotion.sh/docs/introduction)
+- [Tabler Icons](https://tabler-icons.io/)
+- [Jotai](https://tabler-icons.io/)
+- [Emotion](https://emotion.sh/docs/introduction)
 
 - ESlint
 - Prettier
