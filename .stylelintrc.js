@@ -12,6 +12,8 @@ module.exports = {
     'hue-degree-notation': 'number',
     'color-function-notation': 'legacy',
     'alpha-value-notation': 'number',
+    'function-no-unknown': null,
+    'function-name-case': null,
   },
   overrides: [
     {

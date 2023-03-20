@@ -7,6 +7,6 @@ const buildEslintCommand = (filenames) =>
 
 module.exports = {
   '*.{js,jsx,ts,tsx}': [buildEslintCommand, 'pnpm stylelint'],
-  '*.{css,scss}': 'pnpm stylelint',
+  '*.{js,jsx,ts,tsx,css,scss}': 'pnpm stylelint',
   '*.{css,scss,js,jsx,ts,tsx,json,md}': 'pnpm format',
 };
