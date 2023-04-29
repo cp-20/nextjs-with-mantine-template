@@ -10,7 +10,7 @@
     "dev:path": "pnpm pathpida -w",
     "build": "pnpm pathpida && next build",
     "start": "next start",
-    "pathpida": "pathpida -p .gitignore -o ./src/lib -s",
+    "pathpida": "pathpida -p .gitignore -o ./src/shared/lib -s",
     "lint": "eslint src --ext .tsx,.ts",
     "stylelint": "stylelint --ignore-path .gitignore './src/**/*.{jsx,tsx,css,scss}'",
     "fix": "pnpm lint --fix && pnpm stylelint --fix && pnpm format",
