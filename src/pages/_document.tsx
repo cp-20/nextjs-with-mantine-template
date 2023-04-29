@@ -1,10 +1,7 @@
 import { ServerStyles, createStylesServer } from '@mantine/next';
 import type { DocumentContext } from 'next/document';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
-import {
-  GoogleTagManager,
-  GoogleTagManagerBody,
-} from '@/shared/components/GoogleTagManager';
+import { GoogleTagManager } from '@/shared/components/GoogleTagManager';
 import { generateCsp } from '@/shared/lib/generateCsp';
 
 const stylesServer = createStylesServer();
@@ -282,7 +279,6 @@ export default class _Document extends Document<DocumentProps> {
           <link rel="manifest" href="/favicons/manifest.json" />
         </Head>
         <body>
-          <GoogleTagManagerBody />
           <Main />
           <NextScript nonce={nonce} />
         </body>
