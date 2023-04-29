@@ -24,7 +24,7 @@ Next.js を Mantine UI と一緒に色々セットアップしてあるオレオ
 
 - **`package.json`** → `name`・`version`・`author` (+`license`)
 - **`LICENSE`** → 必要であればライセンスそのもの・年と権利者名
-- **`src/shared/components/Description.tsx`** → `<meta name="twitter:site" content="@__cp20__" />`
+- **`src/shared/components/Description.tsx`** → `const appUrl = '';`・`<meta name="twitter:site" content="@__cp20__" />`
 
 ### 3. 開発する
 
