@@ -34,3 +34,4 @@ yarn-error.log*
 
 # source
 $path.ts
+next-env.d.ts

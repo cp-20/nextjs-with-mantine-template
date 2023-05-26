@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:next": "next dev",
+    "dev:next": "next dev --turbo",
     "dev:path": "pnpm pathpida -w",
     "build": "pnpm pathpida && next build",
     "start": "next start",
