@@ -9,6 +9,7 @@ module.exports = {
       jsx: true,
     },
     sourceType: 'module',
+    extraFileExtensions: ['.mdx'],
   },
   extends: [
     'eslint:recommended',
