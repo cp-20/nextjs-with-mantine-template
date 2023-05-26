@@ -43,3 +43,7 @@ Next.js を Mantine UI と一緒に色々セットアップしてあるオレオ
 - `public/icon.svg`
 
 OG 画像は静的なもので良ければ`public/ogp.png`を良い感じに差し替えてください
+
+### 5. いらないものを消す
+
+`readme/readme-github-image.png`とかその他いらないものを消してください
