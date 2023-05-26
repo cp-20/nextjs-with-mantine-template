@@ -57,6 +57,16 @@ module.exports = {
         prefer: 'type-imports',
       },
     ],
+    'react/jsx-boolean-value': 'error',
+    'react/jsx-curly-brace-presence': 'error',
+    'react/self-closing-comp': [
+      'error',
+      {
+        component: true,
+        html: true,
+      },
+    ],
+    'react/jsx-pascal-case': 'error',
   },
   overrides: [
     {
