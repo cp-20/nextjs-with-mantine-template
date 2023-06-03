@@ -39,3 +39,7 @@ yarn-error.log*
 
 # *.scssの型定義ファイル
 *.scss.d.ts
+
+# prisma
+prisma/dev.db
+prisma/dev.db-journal
