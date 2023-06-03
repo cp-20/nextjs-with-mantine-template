@@ -4,7 +4,7 @@ import { TodoList } from './TodoList';
 
 // storiesのセットアップについて: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof TodoList> = {
-  title: 'Pages/TodoList',
+  title: 'Components/TodoList',
   component: TodoList,
   tags: ['autodocs'],
 };

@@ -7,9 +7,9 @@ import {
   updateTodo,
 } from '@/boundaries/database/todo';
 import { TodoItemQuerySchema, TodoItemSchema } from '@/scheme/todo';
-import { procedure } from '@/trpc/trpc';
+import { procedure, router } from '@/trpc/trpc';
 
-export const todoHandlers = {
+export const todoHandlers = router({
   getTodoList: procedure.input(z.object({})).query(() => getTodoList()),
   getTodo: procedure
     .input(z.object({ id: z.number() }))
@@ -23,4 +23,4 @@ export const todoHandlers = {
   createTodo: procedure
     .input(z.object({ todo: TodoItemQuerySchema }))
     .query(({ input }) => createTodo(input.todo)),
-} as const;
+});

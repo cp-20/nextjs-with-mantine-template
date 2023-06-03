@@ -19,7 +19,7 @@ export const CreateTodoItemButton: FC = () => {
         <DraftTodoItem
           submitDraft={async (draft) => {
             setIsDrafting(false);
-            await client.createTodo.query({ todo: draft });
+            await client.todo.createTodo.query({ todo: draft });
             await mutate('todo');
           }}
           cancelDraft={() => {

@@ -4,7 +4,7 @@ import { client } from '@/trpc/client';
 
 export const useTodo = () => {
   const todoItems = useImmutableSWR<TodoItem[]>('todo', () =>
-    client.getTodoList.query({}),
+    client.todo.getTodoList.query({}),
   );
 
   return todoItems.data;

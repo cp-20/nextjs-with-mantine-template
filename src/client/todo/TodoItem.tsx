@@ -10,11 +10,11 @@ import { client } from '@/trpc/client';
 
 const useTodoItem = (item: TodoItemType) => {
   const updateTodoItem = async (newItem: Partial<TodoItemType>) => {
-    await client.updateTodo.query({ id: item.id, todo: newItem });
+    await client.todo.updateTodo.query({ id: item.id, todo: newItem });
     await mutate('todo');
   };
   const deleteTodoItem = async () => {
-    await client.deleteTodo.query({ id: item.id });
+    await client.todo.deleteTodo.query({ id: item.id });
     await mutate('todo');
   };
 
@@ -49,8 +49,12 @@ export const PresentialTodoItem: FC<PresentialProps> = ({
       />
     </div>
     <div>
-      <Text fw="bold">{item.title}</Text>
-      <Text color="dimmed">{item.content}</Text>
+      <Text fw="bold" lineClamp={1}>
+        {item.title}
+      </Text>
+      <Text color="dimmed" lineClamp={3}>
+        {item.content}
+      </Text>
     </div>
     <div
       css={css`
